@@ -6,7 +6,7 @@ if [ "$#" -ne 4 ]; then
   echo "Usage:   $0  <python file>  <Nevents>  <Njobs>  <job flavor>"
   printf "=%.0s" {1..73}; printf "\n"
   echo "python file    ---> the cfg file for the event generation"
-  echo "Nevents        ---> the number of events to be generated"
+  echo "Nevents        ---> number of events to be generated / job"
   echo "Njobs          ---> the number of jobs to be submitted"
   echo "job flavor     ---> choose one from the following list:"
   echo "                         - espresso     (20 min)"  
