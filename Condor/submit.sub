@@ -1,0 +1,56 @@
+##################################################################
+# Script to be executed and is set from the run_condor.sh script #
+##################################################################
+executable            		= exe.sh
+
+#############################################################
+# How many times to retry the job if success_exit_code <> 0 #
+#############################################################
+#max_retries = 3
+
+##########################################################  
+# Definition of output,error,log files (The directories  # 
+# output,error and log should have already been created) #
+##########################################################
+output                		= output/$(ClusterId)$(ProcId).out
+error                 		= error/$(ClusterId)$(ProcId).err
+log                   		= log/$(ClusterId).log
+
+######################
+# Transferring files #
+######################
+should_transfer_files       = YES
+
+######################################################################################
+# Input files need to be transferred to the node (user's argument for run_condor.sh) #
+######################################################################################
+transfer_input_files 		= cfg.py
+
+###########################################################
+# Output files to the submit machine (Default is ON_EXIT) #
+# ON_SUCCESS means if the success_exit_code=0             #
+###########################################################
+#when_to_transfer_output    = ON_SUCCESS
+when_to_transfer_output     = ON_EXIT
+
+######################################################################
+# Enviromental variables for the script --> seed and output filename #
+######################################################################
+environment           		= "SEED=$(ClusterId)$(ProcId) OUTPUT=config.py$(ClusterId)$(ProcId).yoda"
+
+#################################################################
+# Job flavor definition (user's argument for run_condor.sh):    #
+# espresso     = 20 minutes                                     # 
+# microcentury = 1 hour                                         #
+# longlunch    = 2 hour                                         #
+# workday      = 8 hour                                         #
+# tomorrow     = 1 day                                          #
+# testmatch    = 3 days                                         #
+# nextweek     = 1 week                                         #
+#################################################################
++JobFlavour           		= "flavour"
+
+######################################################################
+# Number of jobs to be submitted (user's argument for run_condor.sh) #
+######################################################################
+queue Njobs
