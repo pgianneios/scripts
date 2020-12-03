@@ -10,6 +10,7 @@ The basic usage is as follows:
 - For help message just run `./run_condor.sh`
 
 - For submitting jobs `./run_condor.sh <python file>  <Nevents>  <Njobs>  <job flavor>`
+  
   e.g. `./run_condor.sh Pythia8_CUETM1.py 10000 50 workday` 
 
 This command will create a directory called *Condor* within the directory
