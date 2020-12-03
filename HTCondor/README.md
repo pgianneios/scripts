@@ -1,5 +1,5 @@
 # MC event generation with HTCondor
-The set of scripts included here, are used for Monte Carlo
+The set of scripts included here, are used for **Monte Carlo**
 event generation using **Rivet**, on **CERN lxplus** which uses
 the HTCondor batch system.
 
