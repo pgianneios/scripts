@@ -19,3 +19,7 @@ configuration file, *submit.sub* and *exe.sh* but with the parameters
 provided in the above command (e.g Number of events) parsed in those files.
 Finally, using *Condor* as the submit directory, it will submit the jobs
 to CERN's batch system. 
+
+If you want to re-submit with the same options, just run:
+`condor_submit New_submit.sub` , where *New_submit.sub* is the replica of *submit.sub* which
+was just created.
